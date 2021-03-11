@@ -172,7 +172,7 @@ header {
             border: none;
             background: transparent;
             text-align: start;
-            
+
             &:hover {
               &::after {
                 content: '';
@@ -197,7 +197,7 @@ header {
 
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-evenly;
   grid-gap: 75px;
 }
 
@@ -354,6 +354,15 @@ header {
       }
      
     }
+  }
+}
+
+.message-info {
+  p {
+    color: var(--text);
+    font-size: 1.5rem;
+    font-weight: var(--fw-800);
+    text-align: center;
   }
 }
 

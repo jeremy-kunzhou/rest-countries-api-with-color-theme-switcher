@@ -6,6 +6,7 @@ import { fetchCountryByCode } from "../redux/ActionCreators";
 import { Error } from './utils/ErrorComponent';
 import { Loading } from './utils/LoadingComponent';
 import { Button } from 'reactstrap';
+import { BASE_URL } from './basic';
 
 const CountryDetail = () => {
     const country = useSelector(state => state.country);
@@ -30,11 +31,11 @@ const CountryDetail = () => {
         }
 
         return (
-            <div>
+            <span>
                 {items.map((element, key) => {
                    return (<span key={key} className="border-country">{element.name}</span>)
                 })}
-            </div>
+            </span>
         )
     }
 
@@ -45,7 +46,7 @@ const CountryDetail = () => {
             <React.Fragment>
             <Error message={country.error} />
             <div style={{ display: 'flex', placeContent: 'center' }}>
-                <Button onClick={() => history.push('/')} style={{ width: '100px'}} >Go Home</Button>
+                <Button onClick={() => history.push(`${BASE_URL}`)} style={{ width: '100px'}} >Go Home</Button>
             </div>
 
         </React.Fragment>

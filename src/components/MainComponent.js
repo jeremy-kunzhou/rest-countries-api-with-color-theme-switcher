@@ -8,7 +8,7 @@ import "../scss/App.scss";
 import Home from "./HomeComponent";
 import Header from "./HeaderComponent";
 import CountryDetail from "./CountryDetailComponent";
-
+import { BASE_URL } from './basic';
 
 let Main = () => {
   const auth = useSelector((state) => state.auth);
@@ -19,9 +19,9 @@ let Main = () => {
       <TransitionGroup>
         <CSSTransition classNames="page" timeout={300}>
           <Switch>
-            <Route path="/home" component={Home} />
-            <Route path="/country/:country_id" component={CountryDetail} />
-            <Redirect to="/home" />
+            <Route path={`${BASE_URL}/home`} component={Home} />
+            <Route path={`${BASE_URL}/country/:country_id`} component={CountryDetail} />
+            <Redirect to={`${BASE_URL}/home`}  />
           </Switch>
         </CSSTransition>
       </TransitionGroup>

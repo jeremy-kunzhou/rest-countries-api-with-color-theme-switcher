@@ -6,12 +6,13 @@ import { Error } from './utils/ErrorComponent';
 import { Loading } from './utils/LoadingComponent';
 import { useHistory } from 'react-router-dom';
 import { searchCountriesByName, fetchCountriesByRegion, fetchCountries } from '../redux/ActionCreators';
+import { BASE_URL } from './basic';
 
 const RenderCountry = ({country, id}) => {
     const history = useHistory();
     const handleOnClick = useCallback(
         (key) => {
-            history.push(`/country/${key}`)
+            history.push(`${BASE_URL}/country/${key}`)
         },
         [history],
     )
@@ -103,7 +104,7 @@ const Home = () => {
             <React.Fragment>
                 <Error message={countries.error} />
                 <div style={{ display: 'flex', placeContent: 'center' }}>
-                    <Button onClick={() => history.push('/')} style={{ width: '100px'}} >Go Home</Button>
+                    <Button onClick={() => history.push(`${BASE_URL}`)} style={{ width: '100px'}} >Go Home</Button>
                 </div>
 
             </React.Fragment>
