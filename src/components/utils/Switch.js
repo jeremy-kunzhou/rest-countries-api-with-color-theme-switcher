@@ -10,7 +10,7 @@ export default function Switch () {
       className='theme-switch'
       onClick={() => toggle()}
     >
-      <i className={`fa ${dark? "fa-moon-o" : "fa-sun-o"}`}></i><span>Dark Mode</span>
+      <i className={`fa ${dark? "fa-moon-o" : "fa-sun-o"}`}></i><span>{`${dark? "Dark Mode" : "Light Mode"}`}</span>
     </button>
   );
 } 

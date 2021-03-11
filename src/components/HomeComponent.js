@@ -7,6 +7,7 @@ import { Loading } from './utils/LoadingComponent';
 import { useHistory } from 'react-router-dom';
 import { searchCountriesByName, fetchCountriesByRegion, fetchCountries } from '../redux/ActionCreators';
 import { BASE_URL } from './basic';
+import { numberWithCommas} from './utils/StringUtils';
 
 const RenderCountry = ({country, id}) => {
     const history = useHistory();
@@ -25,7 +26,7 @@ const RenderCountry = ({country, id}) => {
             </div>
             <div className="country-card-body">
                 <p>{country.name}</p>
-                <p><span>Population: </span>{country.population}</p>
+                <p><span>Population: </span>{numberWithCommas(country.population)}</p>
                 <p><span>Region: </span>{country.region}</p>
                 <p><span>Capital: </span>{country.capital}</p>
             </div>

@@ -7,6 +7,7 @@ import { Error } from './utils/ErrorComponent';
 import { Loading } from './utils/LoadingComponent';
 import { Button } from 'reactstrap';
 import { BASE_URL } from './basic';
+import { numberWithCommas} from './utils/StringUtils';
 
 const CountryDetail = () => {
     const country = useSelector(state => state.country);
@@ -69,7 +70,7 @@ const CountryDetail = () => {
                     <p className="country-name">{select_country.name}</p>
                     <p><span>Native Name: </span>{select_country.nativeName}</p>
                     <p><span>Top Level Domain: </span>{select_country.topLevelDomain.join('')}</p>
-                    <p><span>Population: </span>{select_country.population}</p>
+                    <p><span>Population: </span>{numberWithCommas(select_country.population)}</p>
                     <p><span>Currencies: </span>{select_country.currencies[0].name}</p>
                     <p><span>Region: </span>{select_country.region}</p>
                     <p><span>Languages: </span>{select_country.languages[0].name}</p>
